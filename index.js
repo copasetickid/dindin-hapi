@@ -1,11 +1,13 @@
 'use strict';
 
-const Hapi = require('hapi')l
+const Hapi = require('hapi');
 const Sqlite3 = require('sqlite3');
 
 const db = new Sqlite3.Database('./dindin.sqlite');
 
+
 const server = new Hapi.Server();
+server.connection({port: 4000});
 
 server.route([{
     method: 'GET',
